@@ -14,7 +14,7 @@ import matplotlib.ticker as ticker
 
 # plt.switch_backend('agg')
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 class Lang:
     def __init__(self, name):
@@ -165,8 +165,6 @@ def prepareData(lang1, lang2, reverse=False):
     print(input_lang.name, input_lang.n_words)
     print(output_lang.name, output_lang.n_words)
     return input_lang, output_lang, pairs
-
-
 
 
 class EncoderRNN(nn.Module):
@@ -408,6 +406,8 @@ if __name__ == '__main__':
         "we are", "we re ",
         "they are", "they re "
     )
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     input_lang, output_lang, pairs = prepareData('eng', 'fra', True)
     print(random.choice(pairs))

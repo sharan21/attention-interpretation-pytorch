@@ -1,0 +1,7 @@
+.idea
+*.iml
+*.xml
+.DS_Store
+.ipynb_checkpoints
+.data
+.vector_cache
